@@ -10,6 +10,8 @@ public class PressurePlate : MonoBehaviour
     public Material activeTextures;
     public Material defaultTextures;
 
+    public GameObject linkedObject;
+
     public bool active;
 
     void Start()
@@ -25,12 +27,16 @@ public class PressurePlate : MonoBehaviour
             pressurePlateRenderer.material = activeTextures;
             active = true;
         }
+        if (linkedObject != null)
+            linkedObject.GetComponent<Door>().checkActive();
     }
 
     void OnCollisionExit(Collision CollidingObject)
     {
-        Debug.Log("aaa");
+        //Debug.Log("aaa");
         pressurePlateRenderer.material = defaultTextures;
         active = false;
+        if (linkedObject != null)
+            linkedObject.GetComponent<Door>().checkActive();
     }
 }
