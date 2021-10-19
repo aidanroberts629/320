@@ -12,7 +12,7 @@ public class PickUp : MonoBehaviour
         Transform distination = GameObject.Find("Destination").transform;
         if (Vector3.Distance(distination.position, this.transform.position) < 4)
         {
-            GetComponent<BoxCollider>().enabled = false;
+            //GetComponent<BoxCollider>().enabled = false;
             GetComponent<Rigidbody>().useGravity = false;
             this.transform.position = disLocation.position;
             this.transform.parent = distination;
@@ -22,7 +22,7 @@ public class PickUp : MonoBehaviour
     void OnMouseUp()
     {
         this.transform.parent = null;
-        GetComponent<BoxCollider>().enabled = true;
+        //GetComponent<BoxCollider>().enabled = true;
         GetComponent<Rigidbody>().useGravity = true;
     }
 }
