@@ -947,9 +947,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3879895649006209190, guid: 7e54588ab71f8bc44a9af11abcf44dc4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6170400887302318810, guid: 7e54588ab71f8bc44a9af11abcf44dc4, type: 3}
       propertyPath: m_Name
       value: TestDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170400887302318810, guid: 7e54588ab71f8bc44a9af11abcf44dc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7794682794516799010, guid: 7e54588ab71f8bc44a9af11abcf44dc4, type: 3}
       propertyPath: triggerKey.Array.data[0]

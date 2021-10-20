@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    // fields
     public GameObject[] triggerKey;
+    public MeshRenderer mesh;
 
     public void checkActive(){
         bool activate = true;
-        for (int i = 0; i < triggerKey.Length; i++){
+        for (int i = 0; i < triggerKey.Length; i++)
+        {
             activate = triggerKey[i].GetComponent<PressurePlate>().active;
         }
-        if (activate) OpenDoor();
-        else CloseDoor();
+        if (activate)
+            OpenDoor();
+            
+         else
+            CloseDoor();
+           
 
     }
 
     void OpenDoor(){
         //diable door for now, switch to animation later
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false; //disable hitbox
+        mesh.enabled = false; //disable viewmodel
     }
 
     void CloseDoor(){
         //enable door for now, switch to animation later
-        GetComponent<BoxCollider>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true; //enable hitbox
+        mesh.enabled = true; //enable viewmodel
     }
 }
