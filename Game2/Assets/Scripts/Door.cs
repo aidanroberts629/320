@@ -5,8 +5,17 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     // fields
-    public GameObject[] triggerKey;
+    [SerializeField]
+    GameObject[] triggerKey;
+
     public MeshRenderer mesh;
+
+    public bool openOrClose; //false means it is close, true means it is open
+
+    void Start()
+    {
+        openOrClose = false;
+    }
 
     public void checkActive(){
         bool activate = true;
@@ -23,15 +32,17 @@ public class Door : MonoBehaviour
 
     }
 
-    void OpenDoor(){
+    public void OpenDoor(){
         //diable door for now, switch to animation later
         GetComponent<BoxCollider>().enabled = false; //disable hitbox
         mesh.enabled = false; //disable viewmodel
+        openOrClose = true;
     }
 
-    void CloseDoor(){
+    public void CloseDoor(){
         //enable door for now, switch to animation later
         GetComponent<BoxCollider>().enabled = true; //enable hitbox
         mesh.enabled = true; //enable viewmodel
+        openOrClose = false;
     }
 }
