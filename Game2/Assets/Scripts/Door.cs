@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
         bool activate = true;
         for (int i = 0; i < triggerKey.Length; i++)
         {
-            activate = triggerKey[i].GetComponent<PressurePlate>().active;
+            if (!triggerKey[i].GetComponent<PressurePlate>().active) activate = false;
         }
         if (activate)
             OpenDoor();
