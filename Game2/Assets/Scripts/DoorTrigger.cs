@@ -5,64 +5,50 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] requiredKey;
     List<string> requiredKeyName;
 
     [SerializeField]
     GameObject Door;
 
-    public int openOrCloseTrigger; //1 means open tigger, 0 means close trigger
-
-    // use to initialize the require key name field
-    void Start()
-    {
-        //for (int i = 0; i < requiredKey.Length; i++)
-        //{
-        //    requiredKeyName.Add(requiredKey[i].GetComponent<Item>().name);
-        //}
-    }
+    public int openOrCloseTrigger; //1 means open tigger, 0 means close trigger, any other number means this door need specific meterial to open
 
     void OnTriggerEnter(Collider other)
     {
-        bool haveKey = true;
-        if (haveKey)
+        if (other.gameObject.name == "First Person Player")
         {
             if (openOrCloseTrigger == 1)
             {
                 Debug.Log("Open!");
                 Door.GetComponent<Door>().OpenDoor();
             }
-            else
+            else if (openOrCloseTrigger == 0)
             {
                 Debug.Log("Close!");
                 Door.GetComponent<Door>().CloseDoor();
             }
+            else
+            {
+                bool haveKey = true;
+                //This section is used to detect if player has the required item in their inventory
+                for (int i = 0; i < 3; i++)
+                {
+                    if (!other.gameObject.GetComponent<Inventory>().items.Contains(requiredKeyName[i]))
+                    {
+                        haveKey = false;
+                    }
+                }
+
+                if (haveKey)
+                {
+                    Debug.Log("has all keys! Door Open");
+                    Door.GetComponent<Door>().OpenDoor();
+                }
+                else
+                {
+                    other.gameObject.GetComponent<Inventory>().ClearInventory(); //clear the inventory if player don't have right materials
+                    Debug.Log("You don't have all keys, inventory clear");
+                }
+            }
         }
-
-        //if (other.gameObject.name == "First Person Player")
-        //{
-        //bool haveKey = true;
-
-        //This section is used to detect if player has the required item in their inventory
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    if (!CollidingObject.GetComponent<Inventory>().items.Contains(requiredKeyName[i]))
-        //    {
-        //        haveKey = false;
-        //    }
-        //}
-
-
-        //if (haveKey)
-        //{
-        //    if (openOrCloseTrigger)
-        //{
-        //    Debug.Log("Here!");
-        //    //Door.GetComponent<Door>().OpenDoor();
-        //}
-        //else
-        //        Door.GetComponent<Door>().CloseDoor();
-        //}
-        //}
     }
 }
