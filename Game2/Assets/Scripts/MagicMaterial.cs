@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicMaterial : MonoBehaviour
 {
+    // fields
     [SerializeField]
     string materialName;
 
@@ -15,6 +16,7 @@ public class MagicMaterial : MonoBehaviour
 
     bool pickedUpOrNot;
 
+    // methods
     void Start()
     {
         pickedUpOrNot = false;
@@ -23,7 +25,7 @@ public class MagicMaterial : MonoBehaviour
     //enable gui
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "First Person Player")
+        if (other.gameObject.name == "Player")
         {
             pickUpGUI.SetActive(true);
             pickedUpOrNot = true;
