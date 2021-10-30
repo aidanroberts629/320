@@ -30,7 +30,7 @@ public class DoorTrigger : MonoBehaviour
             {
                 bool haveKey = true;
                 //This section is used to detect if player has the required item in their inventory
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < other.gameObject.GetComponent<Inventory>().items.Count; i++)
                 {
                     if (!other.gameObject.GetComponent<Inventory>().items.Contains(requiredKeyName[i]))
                     {
@@ -42,6 +42,7 @@ public class DoorTrigger : MonoBehaviour
                 {
                     Debug.Log("has all keys! Door Open");
                     Door.GetComponent<Door>().OpenDoor();
+                    other.gameObject.GetComponent<Inventory>().ClearInventory();
                 }
                 else
                 {

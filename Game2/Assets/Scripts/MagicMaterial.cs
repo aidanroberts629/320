@@ -13,30 +13,48 @@ public class MagicMaterial : MonoBehaviour
     [SerializeField]
     GameObject player;
 
+    bool pickedUpOrNot;
+
+    void Start()
+    {
+        pickedUpOrNot = false;
+    }
+
     //enable gui
     void OnTriggerEnter(Collider other)
     {
-        pickUpGUI.SetActive(true);
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        //press e to pick up this material
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.name == "First Person Player")
         {
-            Debug.Log("pick up");
-            pickUpGUI.SetActive(false);
+            pickUpGUI.SetActive(true);
+            pickedUpOrNot = true;
+        }
+    }
+    
+    void Update()
+    {
+        if (pickedUpOrNot)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("pick up");
+                pickUpGUI.SetActive(false);
+                pickedUpOrNot = false;
 
-            //add material into the inventory's list
-            player.GetComponent<Inventory>().AddItem(materialName);
+                //add material into the inventory's list
+                player.GetComponent<Inventory>().AddItem(materialName);
 
-            Destroy(gameObject);
+                gameObject.SetActive(false);
+            }
         }
     }
 
     //disable gui when player not in range
     void OnTriggerExit(Collider other)
     {
-        pickUpGUI.SetActive(false);
+        if (other.gameObject.name == "First Person Player")
+        {
+            pickUpGUI.SetActive(false);
+            pickedUpOrNot = false;
+        }
     }
 }

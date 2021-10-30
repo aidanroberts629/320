@@ -7,6 +7,13 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public List<string> items;
 
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
+
     public void AddItem(string itemName)
     {
         if (items.Count < 3) items.Add(itemName);
@@ -20,6 +27,7 @@ public class Inventory : MonoBehaviour
     public void ClearInventory()
     {
         items.Clear();
+        gameManager.GetComponent<GameManager>().RefreshMaterial();
     }
 
 
