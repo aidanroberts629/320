@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
 
     public MeshRenderer mesh;
 
+    public int puzzletype; // 0 is pressure plate puzzle, 1 is color puzzle
+
     public bool openOrClose; //false means it is close, true means it is open
 
     void Start()
@@ -21,8 +23,16 @@ public class Door : MonoBehaviour
         bool activate = true;
         for (int i = 0; i < triggerKey.Length; i++)
         {
-            if (!triggerKey[i].GetComponent<PressurePlate>().isActive)
-                activate = false;
+            if (puzzletype == 0)
+            {
+                if (!triggerKey[i].GetComponent<PressurePlate>().isActive)
+                    activate = false;
+            }
+            else
+            {
+                if (!triggerKey[i].GetComponent<ColorMatchPlate>().isActive)
+                    activate = false;
+            }
         }
         if (activate)
             OpenDoor();

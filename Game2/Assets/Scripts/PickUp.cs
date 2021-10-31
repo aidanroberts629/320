@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform disLocation;
+    public int index;
 
     void OnMouseDown()
     {
