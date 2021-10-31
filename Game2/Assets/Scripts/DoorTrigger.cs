@@ -14,7 +14,7 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "First Person Player")
         {
             if (openOrCloseTrigger == 1)
                 Door.GetComponent<Door>().OpenDoor();

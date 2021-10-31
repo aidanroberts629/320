@@ -25,7 +25,7 @@ public class MagicMaterial : MonoBehaviour
     //enable gui
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "First Person Player")
         {
             pickUpGUI.SetActive(true);
             pickedUpOrNot = true;
