@@ -24,6 +24,9 @@ public class DoorTrigger : MonoBehaviour
             {
                 bool haveKey = true;
                 //This section is used to detect if player has the required item in their inventory
+
+                if (other.gameObject.GetComponent<Inventory>().items.Count == 0) haveKey = false;
+
                 for (int i = 0; i < other.gameObject.GetComponent<Inventory>().items.Count; i++)
                 {
                     if (!other.gameObject.GetComponent<Inventory>().items.Contains(requiredKeyName[i]))

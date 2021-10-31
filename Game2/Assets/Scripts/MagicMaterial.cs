@@ -36,16 +36,19 @@ public class MagicMaterial : MonoBehaviour
     {
         if (pickedUpOrNot)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (player.GetComponent<Inventory>().items.Count < 3)
             {
-                Debug.Log("pick up");
-                pickUpGUI.SetActive(false);
-                pickedUpOrNot = false;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("pick up");
+                    pickUpGUI.SetActive(false);
+                    pickedUpOrNot = false;
 
-                //add material into the inventory's list
-                player.GetComponent<Inventory>().AddItem(materialName);
+                    //add material into the inventory's list
+                    player.GetComponent<Inventory>().AddItem(materialName);
 
-                gameObject.SetActive(false);
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
