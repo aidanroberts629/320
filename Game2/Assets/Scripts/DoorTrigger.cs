@@ -14,18 +14,12 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "First Person Player")
+        if (other.gameObject.name == "Player")
         {
             if (openOrCloseTrigger == 1)
-            {
-                Debug.Log("Open!");
                 Door.GetComponent<Door>().OpenDoor();
-            }
             else if (openOrCloseTrigger == 0)
-            {
-                Debug.Log("Close!");
                 Door.GetComponent<Door>().CloseDoor();
-            }
             else
             {
                 bool haveKey = true;

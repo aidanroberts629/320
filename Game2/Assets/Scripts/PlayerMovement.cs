@@ -28,14 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     double footstepTimer;
     double footstepTimerMax;
-    private bool isMoving;
 
+    // methods
     private void Awake()
     {
         source = gameObject.AddComponent<AudioSource>();
         footstepTimerMax = 0.33; //0.33s.. the length of each of the footstep mp3s
         footstepTimer = footstepTimerMax;
-        isMoving = false;
     }
 
     void Update()
