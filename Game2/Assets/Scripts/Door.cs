@@ -10,13 +10,23 @@ public class Door : MonoBehaviour
 
     public MeshRenderer mesh;
 
-    public int puzzletype; // 0 is pressure plate puzzle, 1 is color puzzle
+    public int puzzletype; //0 is pressure plate puzzle, 1 is color puzzle
 
-    public bool openOrClose; //false means it is close, true means it is open
+    public bool isOpen; //false means door is closed, true means door is opened
+
+    public AudioSource source;
+    public AudioClip doorOpenSound;
+    public AudioClip doorCloseSound;
+    private float startTimer;
 
     void Start()
     {
-        openOrClose = false;
+        isOpen = false;
+        source = gameObject.AddComponent<AudioSource>();
+    }
+    void Update()
+    {
+        startTimer += Time.deltaTime;
     }
 
     public void checkActive(){
@@ -35,25 +45,30 @@ public class Door : MonoBehaviour
             }
         }
         if (activate)
+        {
             OpenDoor();
-            
-         else
+            if (startTimer > 5.0) //ensures the cubes that spawn initially don't trigger the sound, as cubes spawn on plates at the start
+                source.PlayOneShot(doorOpenSound); //plays the sound
+        }
+        else
+        {
             CloseDoor();
-           
-
+            if (startTimer > 5.0)
+                source.PlayOneShot(doorCloseSound);
+        }
     }
 
     public void OpenDoor(){
         //diable door for now, switch to animation later
         GetComponent<BoxCollider>().enabled = false; //disable hitbox
         mesh.enabled = false; //disable viewmodel
-        openOrClose = true;
+        isOpen = true;
     }
 
     public void CloseDoor(){
         //enable door for now, switch to animation later
         GetComponent<BoxCollider>().enabled = true; //enable hitbox
         mesh.enabled = true; //enable viewmodel
-        openOrClose = false;
+        isOpen = false;
     }
 }

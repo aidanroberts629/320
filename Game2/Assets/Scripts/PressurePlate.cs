@@ -16,6 +16,7 @@ public class PressurePlate : MonoBehaviour
 
     public AudioSource source;
     public AudioClip pressurePlateSound;
+    private float startTimer;
     
     // methods
     void Start()
@@ -24,7 +25,10 @@ public class PressurePlate : MonoBehaviour
         isActive = false;
         source = gameObject.AddComponent<AudioSource>();
     }
-
+    void Update()
+    {
+        startTimer += Time.deltaTime;
+    }
     void OnCollisionEnter(Collision CollidingObject)
     {
         if (!isActive)
@@ -36,8 +40,8 @@ public class PressurePlate : MonoBehaviour
         if (linkedObject != null)
             linkedObject.GetComponent<Door>().checkActive();
 
-        if (CollidingObject.gameObject.tag == "Cube" && Time.realtimeSinceStartup>5) //after the && ensures the cubes that spawn initially don't trigger this
-            source.PlayOneShot(pressurePlateSound);
+        if (startTimer>5.0) //ensures the cubes that spawn initially don't trigger the sound, as cubes spawn on plates at the start
+            source.PlayOneShot(pressurePlateSound); //plays the sound
     }
 
     void OnCollisionExit(Collision CollidingObject)
