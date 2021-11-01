@@ -8,6 +8,7 @@ public class ColorMatchPlate : MonoBehaviour
     public int index;
 
     public GameObject linkedObject;
+    public GameObject endGameObject;
 
     //public AudioSource source;
     //public AudioClip pressurePlateSound;
@@ -28,6 +29,9 @@ public class ColorMatchPlate : MonoBehaviour
 
         if (linkedObject != null)
             linkedObject.GetComponent<Door>().checkActive();
+
+        if (endGameObject != null)
+            endGameObject.GetComponent<GameManager>().checkActive();
 
         //if (CollidingObject.gameObject.tag == "Cone" && Time.realtimeSinceStartup > 5) //after the && ensures the cubes that spawn initially don't trigger this
         //    source.PlayOneShot(pressurePlateSound);
