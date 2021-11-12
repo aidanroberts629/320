@@ -43,13 +43,15 @@ public class Weapon : MonoBehaviour
                 break;
 
             case 1:
+                Debug.Log("1");
                 if (ammo[0] > 0)
                 {
-                    //fire ball bullet or something, need to decide the mechanic for it
+                    //fire ball bullet or something, need to decide the mechanic for it                   
                 }
                 break;
 
             case 2:
+                Debug.Log("2");
                 if (ammo[1] > 0)
                 {
                     //Ice bullet or something, need to decide the mechanic for it
@@ -57,6 +59,7 @@ public class Weapon : MonoBehaviour
                 break;
 
             case 3:
+                Debug.Log("3");
                 if (ammo[2] > 0)
                 {
                     //Demon bullet or something, need to decide the mechanic for it
