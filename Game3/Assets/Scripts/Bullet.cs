@@ -8,17 +8,45 @@ public class Bullet : MonoBehaviour
     Vector3 velocity;
     float existTime;
 
+    [SerializeField]
+    int type; //0 is the normal pistol, 1 is demon magic, 2 is enemy bullet
+
+    [SerializeField]
+    int damage;
+
+
+
     void Awake()
     {
-        existTime = Time.time + 3.0f;
+        existTime = Time.time + 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        velocity = direction * 0.005f;
+        velocity = direction * 0.05f;
         transform.position += velocity;
         if (Time.time > existTime)
             Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && type != 2)
+        {
+            //collision.gameObject.GetComponent<Enemy>().ReciveDamage(damage);
+
+            if (type != 1) //in case we want bullent that can go through wall
+                Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Wall" && type != 1) //destory bullet that hits the wall
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Player" && type == 2) //enemy bullet
+        {
+            //collision.gameObject.GetComponent<Player>().ReciveDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

@@ -12,7 +12,6 @@ public class Weapon : MonoBehaviour
 
     public float weaponType = 0;
     public int[] ammo = new int[3];
-    float damage = 1;
     float rateOfFire = 0;
     float timeToFire = 0;
 
