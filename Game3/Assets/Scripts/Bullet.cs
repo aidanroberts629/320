@@ -30,11 +30,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("what");
         if (collision.gameObject.tag == "Enemy" && type != 2)
         {
-            //collision.gameObject.GetComponent<Enemy>().ReciveDamage(damage);
+            collision.gameObject.GetComponent<RangeEnemy>().ReciveDamage(damage);
 
             if (type != 1) //in case we want bullent that can go through wall
                 Destroy(gameObject);
