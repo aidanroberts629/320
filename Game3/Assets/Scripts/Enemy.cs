@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+    public GameObject player;
+    
     float shootingTimeing;
     float burstShootingCount = 0;
 
@@ -14,7 +16,7 @@ public class RangeEnemy : MonoBehaviour
     int score;
 
     [SerializeField]
-    int type; //1 being enemy that can shoot at any direction, 0 being enemy that can only shoot in one direction
+    int type; //2 being melee enemy, 1 being enemy that can shoot at any direction, 0 being enemy that can only shoot in one direction
 
     [SerializeField]
     int directionVelocity; //positive means you shoot towards left side of the screen, negative means you shoot towards right side of the screen
@@ -26,7 +28,11 @@ public class RangeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > shootingTimeing)
+        if (type == 2)
+        {
+            //melee logic here
+        }
+        else if (Time.time > shootingTimeing)
         {
             //logic for fixed direction enemy
             if (type == 0)
