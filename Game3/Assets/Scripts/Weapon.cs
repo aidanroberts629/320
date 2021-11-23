@@ -45,7 +45,9 @@ public class Weapon : MonoBehaviour
                 Debug.Log("1");
                 if (ammo[0] > 0)
                 {
-                    //fire ball bullet or something, need to decide the mechanic for it                   
+                    GameObject FireBullet = Instantiate(bulletList[1], shootingPosition, Quaternion.identity);
+                    FireBullet.GetComponent<Bullet>().direction = direction;
+                    //ammo[0] -= 1;
                 }
                 break;
 

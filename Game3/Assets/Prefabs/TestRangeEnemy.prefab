@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1316247144857718176}
   m_Layer: 6
   m_Name: TestRangeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,10 +125,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   HP: 1
+  speed: 0
   score: 1
   type: 0
   directionVelocity: -1
-  bulletPrefab: {fileID: 915807382209383345, guid: 8e48596a840c5e840b9729451a4e8df6, type: 3}
+  bulletPrefab: {fileID: 764182515048518784, guid: eaddcae8fd458d54298d0923b7319340, type: 3}
 --- !u!50 &1316247144857718176
 Rigidbody2D:
   serializedVersion: 4
@@ -144,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
