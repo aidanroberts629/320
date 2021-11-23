@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     float existTime;
 
     [SerializeField]
-    int type; //0 is the normal pistol, 1 is demon magic, 2 is enemy bullet
+    int type; //0 is the normal pistol, 1 is demon magic, 2 is enemy bullet 
 
     [SerializeField]
     int damage;
@@ -18,14 +18,27 @@ public class Bullet : MonoBehaviour
 
     void Awake()
     {
-        existTime = Time.time + 1.0f;
+        existTime = Time.time + 10.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        velocity = direction * 0.05f;
-        transform.position += velocity;
+        switch (type)
+        {
+            case 0:
+                velocity = direction * 10f;
+                break;
+
+            case 1:
+                velocity = direction * 3f;
+                break;
+
+            case 2:
+                velocity = direction * 5f;
+                break;
+        }
+        transform.position += velocity * Time.deltaTime;
         if (Time.time > existTime)
             Destroy(gameObject);
     }
