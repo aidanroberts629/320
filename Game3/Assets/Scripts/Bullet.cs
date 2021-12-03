@@ -27,11 +27,11 @@ public class Bullet : MonoBehaviour
         switch (type)
         {
             case 0:
-                velocity = direction * 10f;
+                velocity = direction * 30f;
                 break;
 
             case 1:
-                velocity = direction * 3f;
+                velocity = direction * 15f;
                 break;
 
             case 2:
@@ -47,7 +47,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && type != 2)
         {
-            Debug.Log("what");
             collision.gameObject.GetComponent<Enemy>().ReciveDamage(damage);
 
             if (type != 1) //in case we want bullent that can go through wall
