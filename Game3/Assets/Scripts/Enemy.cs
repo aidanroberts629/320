@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     float AttactTimeing;
     float burstShootingCount = 0;
     public bool inRange = false;
+    float timeSinceLastCheck;
 
     [SerializeField]
     int HP;
@@ -71,6 +72,16 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
+
+        if (timeSinceLastCheck < Time.time)
+        {
+            //check if player is in range
+            if ((transform.position - player.transform.position).magnitude < 30) inRange = true;
+            else inRange = false;
+
+            //check every 0.5s
+            timeSinceLastCheck = Time.time + 0.5f;
+        }
     }
 
     public int ReciveDamage(int damage)
@@ -89,7 +100,7 @@ public class Enemy : MonoBehaviour
         if (Time.time > AttactTimeing && collision.gameObject.tag == "Player" && type == 2)
         {
             Debug.Log("melee attack");
-            //collision.gameObject.GetComponent<Player>().ReciveDamage(damage);
+            collision.gameObject.GetComponent<Player>().ReciveDamage(1);
             AttactTimeing = Time.time + 0.7f;
         }
     }

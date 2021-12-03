@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player" && type == 2) //enemy bullet
         {
-            //collision.gameObject.GetComponent<Player>().ReciveDamage(damage);
+            collision.gameObject.GetComponent<Player>().ReciveDamage(damage);
             Destroy(gameObject);
         }
     }
