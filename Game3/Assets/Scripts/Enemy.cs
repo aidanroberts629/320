@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     float shootingTimeing;
     float AttactTimeing;
     float burstShootingCount = 0;
+    public bool inRange = false;
 
     [SerializeField]
     int HP;
@@ -32,39 +33,42 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (type == 2)
+        if (inRange)
         {
-            //melee logic here
-            Vector3 velocity = new Vector3(player.transform.position.x - transform.position.x, 0,0).normalized;
-            transform.position += velocity * speed * Time.deltaTime;
-        }
-        else if (Time.time > shootingTimeing)
-        {
-            //logic for fixed direction enemy
-            if (type == 0)
+            if (type == 2)
             {
-                GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                enemyBullet.GetComponent<Bullet>().direction = new Vector2(directionVelocity, 0);
-                if (burstShootingCount < 2)
-                {
-                    shootingTimeing = Time.time + 0.2f;
-                    burstShootingCount++;
-                }
-                else
-                {
-                    shootingTimeing = Time.time + 2f;
-                    burstShootingCount = 0;
-                }
+                //melee logic here
+                Vector3 velocity = new Vector3(player.transform.position.x - transform.position.x, 0, 0).normalized;
+                transform.position += velocity * speed * Time.deltaTime;
             }
-            //logic for free shooting angle enemy
-            if (type == 1)
+            else if (Time.time > shootingTimeing)
             {
-                Vector2 shootingPosition = new Vector2(transform.position.x, transform.position.y);
-                Vector2 playerPosition = new Vector2(player.transform.position.x, player.transform.position.y);
-                Vector2 direction = (playerPosition - shootingPosition).normalized;
-                GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                enemyBullet.GetComponent<Bullet>().direction = direction;
-                shootingTimeing = Time.time + 1.5f;
+                //logic for fixed direction enemy
+                if (type == 0)
+                {
+                    GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    enemyBullet.GetComponent<Bullet>().direction = new Vector2(directionVelocity, 0);
+                    if (burstShootingCount < 2)
+                    {
+                        shootingTimeing = Time.time + 0.2f;
+                        burstShootingCount++;
+                    }
+                    else
+                    {
+                        shootingTimeing = Time.time + 2f;
+                        burstShootingCount = 0;
+                    }
+                }
+                //logic for free shooting angle enemy
+                if (type == 1)
+                {
+                    Vector2 shootingPosition = new Vector2(transform.position.x, transform.position.y);
+                    Vector2 playerPosition = new Vector2(player.transform.position.x, player.transform.position.y);
+                    Vector2 direction = (playerPosition - shootingPosition).normalized;
+                    GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    enemyBullet.GetComponent<Bullet>().direction = direction;
+                    shootingTimeing = Time.time + 1.5f;
+                }
             }
         }
     }

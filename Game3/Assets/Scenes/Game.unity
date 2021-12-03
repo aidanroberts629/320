@@ -329,17 +329,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1929884548}
     m_Modifications:
+    - target: {fileID: 1644092415011964947, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644092415011964947, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724275543425887311, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8977148820800232296, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8977148820800232296, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.419933
+      value: -84.94
       objectReference: {fileID: 0}
     - target: {fileID: 8977148820800232296, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.792933
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 8977148820800232296, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -87192,7 +87204,7 @@ GameObject:
   - component: {fileID: 1783214866}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
