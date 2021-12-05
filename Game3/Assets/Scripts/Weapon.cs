@@ -10,6 +10,12 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     List<GameObject> bulletList;
 
+    [SerializeField]
+    GameObject fireAmmoUI;
+
+    [SerializeField]
+    GameObject frostAmmoUI;
+
     public float weaponType = 0;
     public int[] ammo = new int[2];
     float rateOfFire = 0;

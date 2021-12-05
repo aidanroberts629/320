@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
         if (invulnerable && Time.time > invulnerableCountDown)
         {
             invulnerable = false;
+            invulnerableUI.SetActive(false);
         }
     }
 
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
     {
         invulnerable = true;
         invulnerableCountDown = Time.time + 5.0f;
+        invulnerableUI.SetActive(true);
     }
 
     public void Heal()
