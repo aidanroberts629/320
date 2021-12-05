@@ -8,8 +8,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     int HP;
 
-    public bool invulnerable;
-    public float invulnerableCountDown;
+    bool invulnerable;
+    float invulnerableCountDown;
+
+    [SerializeField]
+    GameObject invulnerableUI;
 
     void Update()
     {
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
         if (!invulnerable)
         {
             HP -= damage;
+            invulnerable = true;
+            invulnerableCountDown = Time.time + 0.3f;
             if (HP <= 0)
             {
                 gameObject.SetActive(false);
@@ -33,5 +38,16 @@ public class Player : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public void Invulnerable()
+    {
+        invulnerable = true;
+        invulnerableCountDown = Time.time + 5.0f;
+    }
+
+    public void Heal()
+    {
+        if (HP < 3) HP++;
     }
 }
