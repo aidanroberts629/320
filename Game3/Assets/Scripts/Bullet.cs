@@ -9,16 +9,33 @@ public class Bullet : MonoBehaviour
     float existTime;
 
     [SerializeField]
-    int type; //0 is the normal pistol, 1 is demon magic, 2 is enemy bullet 
+    int type; //0 is the normal pistol, 1 is Fire Ball, 2 is enemy bullet, 3 is ice spike
 
     [SerializeField]
     int damage;
 
 
 
-    void Awake()
+    void Start()
     {
-        existTime = Time.time + 10.0f;
+        switch (type)
+        {
+            case 0:
+                existTime = Time.time + 3.0f;
+                break;
+
+            case 1:
+                existTime = Time.time + 3.0f;
+                break;
+
+            case 2:
+                existTime = Time.time + 10.0f;
+                break;
+
+            case 3:
+                existTime = Time.time + 10.0f;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +54,10 @@ public class Bullet : MonoBehaviour
             case 2:
                 velocity = direction * 5f;
                 break;
+
+            case 3:
+                velocity = direction * 10f;
+                break;
         }
         transform.position += velocity * Time.deltaTime;
         if (Time.time > existTime)
@@ -49,7 +70,7 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().ReciveDamage(damage);
 
-            if (type != 1) //in case we want bullent that can go through wall
+            if (type != 1 || type != 3) //in case we want bullent that can go through wall
                 Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Wall" && type != 1) //destory bullet that hits the wall

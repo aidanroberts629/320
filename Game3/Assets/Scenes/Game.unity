@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309090937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05999952, y: 0.49999958, z: -10}
+  m_LocalPosition: {x: 0.05999976, y: 0.49999958, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1813153597}
@@ -369,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05999952, y: 0.49999958, z: -10}
+  m_LocalPosition: {x: 0.05999976, y: 0.49999958, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -618,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121833253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.23, y: 0.13, z: 0}
+  m_LocalPosition: {x: 1.59, y: 1.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1783214861}
@@ -639,9 +639,9 @@ MonoBehaviour:
   bulletList:
   - {fileID: 915807382209383345, guid: 8e48596a840c5e840b9729451a4e8df6, type: 3}
   - {fileID: 965125247219666239, guid: e5c362cfa4761b142aabf163cfa00f14, type: 3}
-  - {fileID: 0}
+  - {fileID: 119515060848063478, guid: 2f41af31842214f47b432ef05fb1081d, type: 3}
   weaponType: 0
-  ammo: 0a0000000000000000000000
+  ammo: 0000000000000000
 --- !u!1 &1257521512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8977148820800232303, guid: 4fbb5eb5ef73f0849b1f7a05f642ce32, type: 3}
@@ -87460,6 +87460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  invulnerable: 0
+  invulnerableCountDown: 0
 --- !u!95 &1783214868
 Animator:
   serializedVersion: 3
