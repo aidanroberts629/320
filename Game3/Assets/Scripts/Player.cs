@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject invulnerableUI;
 
+    [SerializeField]
+    List<GameObject> HPUI;
+
     void Update()
     {
         if (invulnerable && Time.time > invulnerableCountDown)
