@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8622309190529638719}
   - component: {fileID: 653106171029512469}
   - component: {fileID: 1316247144857718176}
+  - component: {fileID: -6327103604413723669}
   m_Layer: 6
   m_Name: FixAngleRangeEnemy
   m_TagString: Enemy
@@ -152,3 +153,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-6327103604413723669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097581455953146725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c05455452d271946a17b20e0bfec9d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

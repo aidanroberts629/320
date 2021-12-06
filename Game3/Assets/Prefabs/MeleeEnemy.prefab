@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8977148820800232301}
   - component: {fileID: 8977148820800232300}
   - component: {fileID: 6003842630542446722}
+  - component: {fileID: 8771390081654886549}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -169,3 +170,22 @@ CircleCollider2D:
   m_Offset: {x: 0.14104524, y: -0.09402871}
   serializedVersion: 2
   m_Radius: 2.4276073
+--- !u!95 &8771390081654886549
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977148820800232303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae16e80c9616e404e97cd0443b808dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
