@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: 070ea92b464ef0f4d907fd286c3e449d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8200518142901093824
+    second: harryAim_2
+  - first:
+      213: -8844024994374103221
+    second: harryAim_3
+  - first:
+      213: -5076563852562062109
+    second: harryWalk_1
+  - first:
+      213: 8349060409219653849
+    second: harryWalk_5
+  - first:
+      213: 6536477794185328073
+    second: harryAim_4
+  - first:
+      213: 2578929405517460955
+    second: harryAim_0
+  - first:
+      213: 212228656250506907
+    second: harryWalk_0
+  - first:
+      213: -3399015820907502167
+    second: harryWalk_4
+  - first:
+      213: -1576460346229739882
+    second: harryJump_1
+  - first:
+      213: 4753565327399742159
+    second: harryCrouch_1
+  - first:
+      213: -572285794146478424
+    second: harryJump_0
+  - first:
+      213: -7730783185672815509
+    second: harryWalk_3
+  - first:
+      213: -588430422489544346
+    second: harryJump_3
+  - first:
+      213: -6206563673891264908
+    second: harryJump_4
+  - first:
+      213: -4202495363721321021
+    second: harryAim_1
+  - first:
+      213: -459497003858661994
+    second: harryCrouch_0
+  - first:
+      213: -4688837511517874955
+    second: harryWalk_2
+  - first:
+      213: -3719698752495642203
+    second: harryJump_2
+  - first:
+      213: 5322118684940198162
+    second: harryCrouch_2
+  - first:
+      213: 5112325792096583298
+    second: harryCrouch_4
+  - first:
+      213: 8009334495740072231
+    second: harryCrouch_3
+  - first:
+      213: -4965542959313345911
+    second: harryCrouch_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: harryAim_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1589
+        width: 303
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04afb3e7238e13e80800000000000000
+      internalID: -8200518142901093824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryAim_3
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1593
+        width: 309
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fc7a11026b34580800000000000000
+      internalID: -8844024994374103221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_1
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1602
+        width: 334
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e42378a21c6c89b0800000000000000
+      internalID: -5076563852562062109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_5
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 1606
+        width: 322
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0a0dbf432ddd370800000000000000
+      internalID: 8349060409219653849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryAim_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1124
+        width: 313
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c535ac0ceb36ba50800000000000000
+      internalID: 6536477794185328073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryAim_0
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1139
+        width: 185
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd57dac61a23ac320800000000000000
+      internalID: 2578929405517460955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_0
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1144
+        width: 322
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e48f2a6dcf1f200800000000000000
+      internalID: 212228656250506907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_4
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1153
+        width: 321
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a520e0ae1544d0d0800000000000000
+      internalID: -3399015820907502167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryJump_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 671
+        width: 185
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69eac74eaa94f1ae0800000000000000
+      internalID: -1576460346229739882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 671
+        width: 184
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca6644da7e08f140800000000000000
+      internalID: 4753565327399742159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryJump_0
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 685
+        width: 185
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a695e13a15de08f0800000000000000
+      internalID: -572285794146478424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_3
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 694
+        width: 324
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cb86ee6adb6b490800000000000000
+      internalID: -7730783185672815509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryJump_3
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 769
+        width: 201
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6694a7cf5a975d7f0800000000000000
+      internalID: -588430422489544346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryJump_4
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 787
+        width: 210
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4762edde83bddd9a0800000000000000
+      internalID: -6206563673891264908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryAim_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 213
+        width: 253
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c52a238bbcbda5c0800000000000000
+      internalID: -4202495363721321021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_0
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 215
+        width: 185
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69de5a5d8e98f99f0800000000000000
+      internalID: -459497003858661994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryWalk_2
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 240
+        width: 338
+        height: 437
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f453743027edeeb0800000000000000
+      internalID: -4688837511517874955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryJump_2
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 261
+        width: 192
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9980241b9f06cc0800000000000000
+      internalID: -3719698752495642203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_2
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 396
+        width: 189
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21164540fb6fbd940800000000000000
+      internalID: 5322118684940198162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_4
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 500
+        width: 178
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28efbfdb831a2f640800000000000000
+      internalID: 5112325792096583298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_3
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 80
+        width: 182
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7219ed1e94fd62f60800000000000000
+      internalID: 8009334495740072231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: harryCrouch_5
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 107
+        width: 177
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982af21bcf8d61bb0800000000000000
+      internalID: -4965542959313345911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

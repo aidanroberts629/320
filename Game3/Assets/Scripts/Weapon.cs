@@ -21,17 +21,18 @@ public class Weapon : MonoBehaviour
     Vector2 currentEulerAngles;
     Quaternion currentRotation;
 
+    public AudioSource source;
+    public AudioClip shotSound;
 
-    // Start is called before the first frame update
-    //void Awake()
-    //{
+    void Start()
+    {
+        source = gameObject.AddComponent<AudioSource>();
+    }
 
-    //}
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > timeToFire) Shoot();
+        if(Input.GetButtonDown("Fire1") && Time.time > timeToFire)
+            Shoot();
     }
 
     void Shoot()
@@ -51,6 +52,7 @@ public class Weapon : MonoBehaviour
                     pistolBullet.transform.localScale = theScale;
                 }
                 pistolBullet.GetComponent<Bullet>().direction = direction;
+                source.PlayOneShot(shotSound); //plays bullet firing sound
                 break;
 
             case 1:
