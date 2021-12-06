@@ -31,8 +31,20 @@ public class Player : MonoBehaviour
         if (!invulnerable)
         {
             HP -= damage;
+            if (HP == 2)
+            {
+                HPUI[2].SetActive(false);
+            }
+            else if (HP == 1)
+            {
+                HPUI[1].SetActive(false);
+            }
+            else if (HP == 0)
+            {
+                HPUI[0].SetActive(false);
+            }
             invulnerable = true;
-            invulnerableCountDown = Time.time + 0.3f;
+            invulnerableCountDown = Time.time + 0.5f;
             if (HP <= 0)
             {
                 gameObject.SetActive(false);
@@ -54,5 +66,14 @@ public class Player : MonoBehaviour
     public void Heal()
     {
         if (HP < 3) HP++;
+
+        if (HP == 3)
+        {
+            HPUI[2].SetActive(true);
+        }
+        else if (HP == 2)
+        {
+            HPUI[1].SetActive(true);
+        }
     }
 }

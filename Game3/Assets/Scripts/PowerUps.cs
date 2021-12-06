@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUps : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class PowerUps : MonoBehaviour
             switch (type)
             {
                 case 0:
+                    collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().AddAmmo(0);
+                    break;
                 case 1:
-                    collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().ammo[type] += 10;
-                    Debug.Log(collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().ammo[type]);
+                    collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().AddAmmo(1);
                     break;
 
                 case 2:

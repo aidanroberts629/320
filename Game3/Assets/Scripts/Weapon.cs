@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -11,14 +12,10 @@ public class Weapon : MonoBehaviour
     List<GameObject> bulletList;
 
     [SerializeField]
-    GameObject fireAmmoUI;
-
-    [SerializeField]
-    GameObject frostAmmoUI;
+    List<Text> AmmoUI;
 
     public float weaponType = 0;
     public int[] ammo = new int[2];
-    float rateOfFire = 0;
     float timeToFire = 0;
 
     Vector2 currentEulerAngles;
@@ -70,6 +67,7 @@ public class Weapon : MonoBehaviour
                     fireBullet.GetComponent<Bullet>().direction = direction;
                     ammo[0] -= 1;
                     timeToFire = Time.time + 0.5f;
+                    AmmoUI[0].text = " " + ammo[0];
                 }
                 break;
 
@@ -87,6 +85,7 @@ public class Weapon : MonoBehaviour
                     iceBullet.GetComponent<Bullet>().direction = direction;
                     ammo[1] -= 1;
                     timeToFire = Time.time + 1f;
+                    AmmoUI[1].text = " " + ammo[1];
                 }
                 break;
 
@@ -99,5 +98,11 @@ public class Weapon : MonoBehaviour
             //    }
             //    break;
         }
+    }
+    
+    public void AddAmmo(int index)
+    {
+        ammo[index] += 10;
+        AmmoUI[index].text = " " + ammo[index];
     }
 }
