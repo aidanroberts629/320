@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8622309190529638719}
   - component: {fileID: 653106171029512469}
   - component: {fileID: 1316247144857718176}
-  - component: {fileID: -5881729809833071505}
   m_Layer: 6
   m_Name: FixAngleRangeEnemy
   m_TagString: Enemy
@@ -153,19 +152,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-5881729809833071505
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8097581455953146725}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2b7941d5033897043b92bfdf7c9dad56, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.055544175, y: -0.19308329}
-  serializedVersion: 2
-  m_Radius: 2.1028526
