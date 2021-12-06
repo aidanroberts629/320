@@ -143,7 +143,7 @@ public class Enemy : MonoBehaviour
 
             //melee attack logic here
             collision.gameObject.GetComponent<Player>().ReciveDamage(1);
-            AttactTimeing = Time.time + 0.7f;
+            AttactTimeing = Time.time + 2f;
         }
     }
 }
