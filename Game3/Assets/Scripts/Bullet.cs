@@ -64,7 +64,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && type != 2)
         {
@@ -73,7 +73,7 @@ public class Bullet : MonoBehaviour
             if (type != 1 || type != 3) //in case we want bullent that can go through wall
                 Destroy(gameObject);
         }
-        else if (collision.gameObject.tag == "Wall" && type != 1) //destory bullet that hits the wall
+        else if (collision.gameObject.tag == "Wall" && type != 1) //destroy bullet that hits the wall
         {
             Destroy(gameObject);
         }

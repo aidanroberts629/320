@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _animator.SetBool("crouch", crouch);
-        _animator.SetBool("crouchend", crouch);
+       // _animator.SetBool("crouchend", crouch);
         _animator.SetBool("jump", jump);
     }
 
