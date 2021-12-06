@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     float burstShootingCount = 0;
     public bool inRange = false;
     float timeSinceLastCheck;
+    bool turned = false;
 
     [SerializeField]
     int HP;
@@ -40,6 +41,23 @@ public class Enemy : MonoBehaviour
             {
                 //melee logic here
                 Vector3 velocity = new Vector3(player.transform.position.x - transform.position.x, 0, 0).normalized;
+
+                //turing enemy
+                if (velocity.x > 0 && !turned)
+                {
+                    Vector3 theScale = transform.localScale;
+                    theScale.x *= -1;
+                    transform.localScale = theScale;
+                    turned = true;
+                }
+                else if (velocity.x < 0 && turned)
+                {
+                    Vector3 theScale = transform.localScale;
+                    theScale.x *= -1;
+                    transform.localScale = theScale;
+                    turned = false;
+                }
+
                 transform.position += velocity * speed * Time.deltaTime;
             }
             else if (Time.time > shootingTimeing)
@@ -47,6 +65,7 @@ public class Enemy : MonoBehaviour
                 //logic for fixed direction enemy
                 if (type == 0)
                 {
+                    //instantiate bullet here
                     GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                     enemyBullet.GetComponent<Bullet>().direction = new Vector2(directionVelocity, 0);
                     if (burstShootingCount < 2)
@@ -63,12 +82,33 @@ public class Enemy : MonoBehaviour
                 //logic for free shooting angle enemy
                 if (type == 1)
                 {
+                    //calculate direction vector
                     Vector2 shootingPosition = new Vector2(transform.position.x, transform.position.y);
                     Vector2 playerPosition = new Vector2(player.transform.position.x, player.transform.position.y);
                     Vector2 direction = (playerPosition - shootingPosition).normalized;
+
+                    //instantiate bullet here
                     GameObject enemyBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                     enemyBullet.GetComponent<Bullet>().direction = direction;
+
+
                     shootingTimeing = Time.time + 1.5f;
+
+                    //turing enemy
+                    if (direction.x > 0 && !turned)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        transform.localScale = theScale;
+                        turned = true;
+                    }
+                    else if (direction.x < 0 && turned)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        transform.localScale = theScale;
+                        turned = false;
+                    }
                 }
             }
         }
@@ -100,6 +140,8 @@ public class Enemy : MonoBehaviour
         if (Time.time > AttactTimeing && collision.gameObject.tag == "Player" && type == 2)
         {
             Debug.Log("melee attack");
+
+            //melee attack logic here
             collision.gameObject.GetComponent<Player>().ReciveDamage(1);
             AttactTimeing = Time.time + 0.7f;
         }
