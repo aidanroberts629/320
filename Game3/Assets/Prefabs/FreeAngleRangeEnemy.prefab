@@ -147,12 +147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   inRange: 0
-  HP: 1
+  HP: 2
   speed: 0
   score: 1
   type: 1
   directionVelocity: 0
-  bulletPrefab: {fileID: 764182515048518784, guid: eaddcae8fd458d54298d0923b7319340, type: 3}
+  bulletPrefab: {fileID: 3512920686392386301, guid: 8a6daf1c731cd0b44b5f64c3b4283db6, type: 3}
 --- !u!95 &-158253859999283343
 Animator:
   serializedVersion: 3

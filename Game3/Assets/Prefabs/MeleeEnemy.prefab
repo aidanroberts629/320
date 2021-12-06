@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   inRange: 0
-  HP: 1
+  HP: 3
   speed: 5
   score: 1
   type: 2
