@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger enter");
-        SceneManager.LoadScene(4); //loads scene at index 4 (should be game over scene)
+        if(gameObject.tag == "Player")
+            SceneManager.LoadScene(4); //loads scene at index 4 (should be game over scene)
     }
 }
