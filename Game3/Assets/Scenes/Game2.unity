@@ -139556,8 +139556,8 @@ MonoBehaviour:
   - {fileID: 965125247219666239, guid: e5c362cfa4761b142aabf163cfa00f14, type: 3}
   - {fileID: 119515060848063478, guid: 2f41af31842214f47b432ef05fb1081d, type: 3}
   AmmoUI:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1574524149}
+  - {fileID: 1842914511}
   weaponType: 0
   ammo: 0000000000000000
   source: {fileID: 1598108238}
