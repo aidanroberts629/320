@@ -139,9 +139,7 @@ public class Enemy : MonoBehaviour
     {
         if (Time.time > AttactTimeing && collision.gameObject.tag == "Player" && type == 2)
         {
-            Debug.Log("melee attack");
-
-            //melee attack logic here
+            // enemy melee attack
             collision.gameObject.GetComponent<Player>().ReciveDamage(1);
             AttactTimeing = Time.time + 2f;
         }

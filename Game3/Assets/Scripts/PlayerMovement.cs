@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     // fields
     public PlayerController controller; //accessing PlayerController script methods
 
+
     float horizontalMove = 0f;
     float walkSet = 0f;
     public float runSpeed = 40f;

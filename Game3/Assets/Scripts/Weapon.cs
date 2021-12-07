@@ -24,6 +24,13 @@ public class Weapon : MonoBehaviour
     public AudioSource source;
     public AudioClip shotSound;
 
+    public Rigidbody2D rb2d;
+    public Camera camera;
+    Vector2 mousePosition;
+
+    public Transform firePoint;
+    public float bulletForce = 20f;
+
     void Start()
     {
         source = gameObject.AddComponent<AudioSource>();
@@ -31,8 +38,18 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+
         if(Input.GetButtonDown("Fire1") && Time.time > timeToFire)
             Shoot();
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 lookDirection = mousePosition - rb2d.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rb2d.rotation = angle;
+        rb2d.MoveRotation(angle); //this line saved it all
     }
 
     void Shoot()
@@ -44,7 +61,8 @@ public class Weapon : MonoBehaviour
         switch (weaponType)
         {
             case 0:
-                GameObject pistolBullet = Instantiate(bulletList[0], shootingPosition, Quaternion.identity);
+                GameObject pistolBullet = Instantiate(bulletList[0], firePoint.position, firePoint.rotation);
+                
                 if (direction.x < 0)
                 {
                     Vector3 theScale = pistolBullet.transform.localScale;
@@ -52,14 +70,17 @@ public class Weapon : MonoBehaviour
                     pistolBullet.transform.localScale = theScale;
                 }
                 pistolBullet.GetComponent<Bullet>().direction = direction;
+
+                
+                Rigidbody2D pistolRb = pistolBullet.GetComponent<Rigidbody2D>();
+                pistolRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
                 source.PlayOneShot(shotSound); //plays bullet firing sound
                 break;
 
             case 1:
-                Debug.Log("1");
-                if (ammo[0] > 0)
-                {
-                    GameObject fireBullet = Instantiate(bulletList[1], shootingPosition, Quaternion.identity);
+                
+                if (ammo[0]>0) {
+                    GameObject fireBullet = Instantiate(bulletList[1], firePoint.position, firePoint.rotation);
                     if (direction.x < 0)
                     {
                         Vector3 theScale = fireBullet.transform.localScale;
@@ -67,6 +88,11 @@ public class Weapon : MonoBehaviour
                         fireBullet.transform.localScale = theScale;
                     }
                     fireBullet.GetComponent<Bullet>().direction = direction;
+
+                    Rigidbody2D fireRb = fireBullet.GetComponent<Rigidbody2D>();
+                    fireRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+                    source.PlayOneShot(shotSound); //plays bullet firing sound
+
                     ammo[0] -= 1;
                     timeToFire = Time.time + 0.5f;
                     AmmoUI[0].text = " " + ammo[0];
@@ -74,10 +100,9 @@ public class Weapon : MonoBehaviour
                 break;
 
             case 2:
-                Debug.Log("2");
                 if (ammo[1] > 0)
                 {
-                    GameObject iceBullet = Instantiate(bulletList[2], shootingPosition, Quaternion.identity);
+                    GameObject iceBullet = Instantiate(bulletList[2], firePoint.position, firePoint.rotation);
                     if (direction.x < 0)
                     {
                         Vector3 theScale = iceBullet.transform.localScale;
@@ -85,20 +110,16 @@ public class Weapon : MonoBehaviour
                         iceBullet.transform.localScale = theScale;
                     }
                     iceBullet.GetComponent<Bullet>().direction = direction;
+
+                    Rigidbody2D iceRb = iceBullet.GetComponent<Rigidbody2D>();
+                    iceRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+                    source.PlayOneShot(shotSound); //plays bullet firing sound
+
                     ammo[1] -= 1;
                     timeToFire = Time.time + 1f;
                     AmmoUI[1].text = " " + ammo[1];
                 }
                 break;
-
-            //don't have third bullet
-            //case 3:
-            //    Debug.Log("3");
-            //    if (ammo[2] > 0)
-            //    {
-            //        //Demon bullet or something, need to decide the mechanic for it
-            //    }
-            //    break;
         }
     }
     

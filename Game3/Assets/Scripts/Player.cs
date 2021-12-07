@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
                 gameObject.SetActive(false);
 
                 //end game condition reach, end game logic here, load gameover scene
-                //SceneManager.LoadScene(2);
+                SceneManager.LoadScene(4); //loads scene at index 4 (should be game over scene)
             }
         }
         return 0;
