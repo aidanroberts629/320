@@ -15,10 +15,10 @@ public class PowerUps : MonoBehaviour
             switch (type)
             {
                 case 0:
-                    collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().AddAmmo(0);
+                    collision.gameObject.transform.Find("FirePoint").Find("Barrel").GetComponent<Weapon>().AddAmmo(0);
                     break;
                 case 1:
-                    collision.gameObject.transform.Find("FirePoint").GetComponent<Weapon>().AddAmmo(1);
+                    collision.gameObject.transform.Find("FirePoint").Find("Barrel").GetComponent<Weapon>().AddAmmo(1);
                     break;
 
                 case 2:
