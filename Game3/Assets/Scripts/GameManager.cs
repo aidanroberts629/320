@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //changing weapons by pressing the right mouse button
+        if (Input.GetKeyDown(KeyCode.Escape)) //if escape key is hit during gameplay
+            Application.Quit(); //quit application
         if (Input.GetButtonDown("Fire2"))
         {
             if (weapon.GetComponent<Weapon>().weaponType < 2)
