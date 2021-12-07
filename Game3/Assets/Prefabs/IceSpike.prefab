@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4148515615414226943}
   - component: {fileID: -6410944352827290634}
   - component: {fileID: 5053488341633678773}
+  - component: {fileID: -2860085367127950273}
   m_Layer: 0
   m_Name: IceSpike
   m_TagString: Untagged
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.02, y: 0.87}
+    oldSize: {x: 0.87, y: 3.02}
     newSize: {x: 3.02, y: 0.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,3 +126,24 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   type: 0
   damage: 5
+--- !u!50 &-2860085367127950273
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119515060848063478}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
